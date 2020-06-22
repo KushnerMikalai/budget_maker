@@ -1,26 +1,31 @@
-import { Router } from 'https://deno.land/x/oak/mod.ts';
-
+import { Router, Context } from '../../deps.ts';
+import { handlePost, handleGet } from '../controllers/user.ts';
+import { createPost } from '../controllers/post.ts';
 import {
   getNotes,
-  postNotes
+  postNotes,
   // createNote,
   // getSingleNote,
   // updateNote,
   // deleteNote,
 } from '../controllers/notes.ts';
-
 const router = new Router();
 
 router
-  .get('/', (ctx) => {
+  .get('/', (ctx: Context) => {
     ctx.response.body = 'Welcome to Finance';
   })
 
-  // notes
   .get('/notes', getNotes)
   .post('/notes', postNotes)
   // .get('/notes/:id', getSingleNote)
   // .put('/notes/:id', updateNote)
   // .delete('/notes/:id', deleteNote);
 
-export default router;
+  .post('/user', handlePost)
+  .get('/user', handleGet)
+  // .post('/login', login)
+  // .get('/me', me)
+
+  .post('/posts', createPost);
+export { router };

@@ -1,9 +1,9 @@
 import { RouterContext } from 'https://deno.land/x/oak/mod.ts';
 import { getQuery } from 'https://deno.land/x/oak/helpers.ts'
 
-import db from '../helpers/mongodb.ts';
+import { db } from '../config/db.ts';
 
-const notesCollection = db.collection('notes');
+const notesCollection = db.getDatabase().collection('notes');
 
 const getNotes = async (ctx: RouterContext) => {
   // Get Notes from MongoDB and Return output
