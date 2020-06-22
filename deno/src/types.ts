@@ -6,7 +6,7 @@ export interface Config {
 }
 
 export interface IUser {
-  _id: string;
+  _id: any;
   password: string;
   name: string;
   email: string;

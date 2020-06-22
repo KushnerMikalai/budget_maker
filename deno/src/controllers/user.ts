@@ -102,7 +102,7 @@ const login = async (body: any) => {
     };
   }
 
-  const jwt = generateJwt(user._id);
+  const jwt = generateJwt(user._id.$oid);
   return {
     status: 201,
     body: {
