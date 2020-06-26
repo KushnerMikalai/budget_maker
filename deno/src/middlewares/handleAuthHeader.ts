@@ -3,7 +3,7 @@ import { IUser } from '../types.ts';
 import { config } from '../config/config.ts';
 import { User } from '../models/user.ts';
 
-export const handleAuthHeader = async (ctx: any, next: () => Promise<void>) => {
+export const handleAuthHeader = async (ctx: Context, next: () => Promise<void>) => {
   try {
     const { request, state } = ctx;
 

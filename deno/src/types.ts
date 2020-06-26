@@ -5,8 +5,12 @@ export interface Config {
   jwtSecret: string;
 }
 
+export interface IOid {
+  $oid: string;
+}
+
 export interface IUser {
-  _id: any;
+  _id: IOid;
   password: string;
   name: string;
   email: string;
