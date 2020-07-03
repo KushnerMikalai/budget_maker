@@ -1,3 +1,4 @@
+export { SmtpClient } from 'https://deno.land/x/smtp/mod.ts';
 export { config as envConfig } from 'https://deno.land/x/dotenv/mod.ts';
 export { MongoClient } from 'https://deno.land/x/mongo/mod.ts';
 // @deno-types="https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/yup/index.d.ts"

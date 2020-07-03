@@ -1,4 +1,4 @@
-import { config } from '../config/config.ts';
+import { config } from './config.ts';
 import { MongoClient } from '../../deps.ts';
 
 export class DatabaseConnection {

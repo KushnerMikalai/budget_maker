@@ -5,8 +5,10 @@ import { envConfig } from '../../deps.ts';
 envConfig();
 
 export const config: Config = {
-  port: Deno.env.get('PORT') || 8080,
+  PORT: Deno.env.get('PORT') || 8080,
   dbName: Deno.env.get('DB_NAME') || 'deno_demo',
   dbHostUrl: Deno.env.get('DB_HOST_URL') || 'mongodb://localhost:27017',
   jwtSecret: Deno.env.get('JWT_SECRET')!,
+  SEND_EMAIL: Deno.env.get('SEND_EMAIL')!,
+  pwdEmail: Deno.env.get('PWD_EMAIL')!,
 };

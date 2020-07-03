@@ -1,5 +1,11 @@
 # Deno App
 
+## After instal deno:
+```shell script
+export DENO_INSTALL="/Users/nickkush/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+```
+
 ## Getting Started
 
 ```shell script

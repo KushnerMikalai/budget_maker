@@ -26,8 +26,8 @@ export async function handlePost(ctx: RouterContext) {
   };
   try {
     switch (query.do) {
-      case 'signup':
-        res = await signup(requestBody);
+      case 'signUp':
+        res = await signUp(requestBody);
         break;
       case 'login':
         res = await login(requestBody);
@@ -63,7 +63,7 @@ export async function handleGet(ctx: RouterContext) {
 }
 
 // post
-const signup = async (body: any) => {
+const signUp = async (body: any) => {
   const data: IUser = body.value;
   await signupSchema.validate(data);
 

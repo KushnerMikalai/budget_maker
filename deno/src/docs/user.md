@@ -1,6 +1,12 @@
 # user
 
-## user roles
+## roles
 
 - admin
 - user
+
+## status
+
+- no_validated
+- blocked
+- validated

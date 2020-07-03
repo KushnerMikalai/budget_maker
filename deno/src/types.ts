@@ -1,8 +1,10 @@
 export interface Config {
-  port: string | number;
+  PORT: string | number;
   dbName: string;
   dbHostUrl: string;
   jwtSecret: string;
+  SEND_EMAIL: string;
+  pwdEmail: string;
 }
 
 export interface IOid {
@@ -16,6 +18,7 @@ export interface IUser {
   email: string;
   role: string;
   date: Date;
+  status: string;
 }
 
 export interface IPost {

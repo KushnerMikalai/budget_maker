@@ -1,4 +1,4 @@
-import { bgGreen, black, Application, oakCors } from '../deps.ts';
+import { Context, bgGreen, black, Application, oakCors } from '../deps.ts';
 import { router } from './routes/routes.ts';
 import { logger } from './utils/logger.ts';
 import { notFound } from './utils/404.ts';
@@ -23,14 +23,14 @@ export class App {
   // initialize middlewares
   private initializeMiddlewares() {
     // Logger
-    this.app.use(async (ctx, next) => {
+    this.app.use(async (ctx: Context, next: () => Promise<void>) => {
       await next();
       const rt = ctx.response.headers.get('X-Response-Time');
       console.log(`${ctx.request.method} ${ctx.request.url} - ${rt}`);
     });
 
     // Timing
-    this.app.use(async (ctx, next) => {
+    this.app.use(async (ctx: Context, next: () => Promise<void>) => {
       const start = Date.now();
       await next();
       const ms = Date.now() - start;
