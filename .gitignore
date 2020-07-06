@@ -3,7 +3,7 @@ node_modules
 /dist
 
 # deno
-/deno/.deno_plugins
+/experiment/deno/.deno_plugins
 
 # local env files
 .env.local
