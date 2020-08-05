@@ -77,6 +77,9 @@ const signUp = async (body: any) => {
     };
   }
 
+  const userId = uuid.generate();
+  console.log(userId, 'uuid');
+
   const { id } = await User.insert(data);
 
   const jwt = generateJwt(id);
