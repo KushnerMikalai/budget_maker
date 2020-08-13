@@ -14,9 +14,9 @@ function App() {
   return (
     <div className="App">
       <Header items={menu} />
-      <p>Hello 9 aaa</p>
       <NameForm />
       <Clock />
+      <div className="row">pok</div>
       <ScrollToTop />
     </div>
   );
