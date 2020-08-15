@@ -1,0 +1,13 @@
+#curl --location --request POST 'http://localhost:3000/register' \
+#--header 'Content-Type: application/x-www-form-urlencoded' \
+#--header 'Accept-Language: en' \
+#--data-urlencode 'name=My Name' \
+#--data-urlencode 'email=my@email.com' \
+#--data-urlencode 'password=12345'
+POST http://localhost:3000/register
+Accept-Language: en
+Content-Type: application/x-www-form-urlencoded
+
+name=My+Name&email=my%40email.com&password=12345
+
+###
