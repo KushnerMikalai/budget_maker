@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ScrollToTop.module.css';
+import './ScrollToTop.css';
 
 function ScrollToTop() {
   function scrollToTop() {
@@ -9,7 +9,7 @@ function ScrollToTop() {
     });
   }
   return (
-    <button className={styles.button} onClick={scrollToTop}>to top</button>
+    <button className="scroll-to-top" onClick={scrollToTop}>to top</button>
   )
 }
 

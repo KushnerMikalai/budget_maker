@@ -1,5 +1,15 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&display=swap');*/
+@import "./assets/css/values/colors.css";
+@import "./assets/css/values/fonts.css";
+
+*
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  font-size: 1rem;
 }
 
 .App-logo {

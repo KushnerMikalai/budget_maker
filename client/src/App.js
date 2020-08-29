@@ -1,8 +1,11 @@
 import React from 'react';
+import './App.css';
+
 import Clock from './components/Clock';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import ScrollToTop from './components/common/ScrollToTop/ScrollToTop';
 import Header from './components/common/Header/Header';
-import NameForm from './components/NameForm/NameForm';
+import TestForm from './components/forms/TestForm/TestForm';
+import Calculator from './components/test/Calculator/Calculator'
 
 const menu = [
   { href: '/', name: 'home', target: null },
@@ -14,12 +17,13 @@ function App() {
   return (
     <div className="App">
       <Header items={menu} />
-      <NameForm />
+      <Calculator />
+      <TestForm />
       <Clock />
       <div className="row">pok</div>
       <ScrollToTop />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

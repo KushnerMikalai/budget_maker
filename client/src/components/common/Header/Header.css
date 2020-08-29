@@ -1,0 +1,46 @@
+.header {
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.header__rightContent {
+    margin-left: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 0;
+    text-decoration: none;
+    font-family: var(--alegreya);
+}
+
+.logo__img {
+    margin-right: .5rem;
+    display: inline-block;
+    width: 2.4rem;
+}
+
+.logo__text {
+    font-size: 1.6rem;
+    /*font-family: "Comic Sans MS", cursive, sans-serif;*/
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: 400;
+    color: var(--dracula-orchid);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.menu__item {
+    margin: 0 .5rem;
+}
+
+.menu__link {
+    text-decoration: none;
+}
