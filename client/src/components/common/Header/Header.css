@@ -5,16 +5,16 @@
     background-color: var(--white);
 }
 
-.header__rightContent {
+.header__right-content {
     margin-left: auto;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    font-size: 0;
+    font-size: 1.6rem;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: 300;
+    color: var(--dracula-orchid);
     text-decoration: none;
-    font-family: var(--alegreya);
 }
 
 .logo__img {
@@ -25,9 +25,9 @@
 
 .logo__text {
     font-size: 1.6rem;
-    /*font-family: "Comic Sans MS", cursive, sans-serif;*/
-    font-family: Impact, Charcoal, sans-serif;
-    font-weight: 400;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /* font-family: Impact, Charcoal, sans-serif; */
+    font-weight: 300;
     color: var(--dracula-orchid);
 }
 
@@ -36,11 +36,36 @@
     align-items: center;
     list-style: none;
 }
-
-.menu__item {
-    margin: 0 .5rem;
-}
-
 .menu__link {
     text-decoration: none;
+}
+
+.header-item {
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 500;
+    padding: .5rem 1rem;
+    color: var(--dracula-orchid);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.header-item:hover {
+    color: var(--electron-blue);
+}
+
+.login-button {
+    border: none;
+    border-left: 1px solid var(--dracula-orchid);
+    background-color: transparent;
+}
+
+.user__login-icon {
+    margin-right: .6rem;
+    display: inline-block;
+    font-size: 1.2rem;
+}
+.user__login-text {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
 }

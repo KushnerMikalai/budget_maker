@@ -1,6 +1,14 @@
 import React from 'react'
 import './TestForm.css'
 
+const townsList = {
+    la: 'Los Angeles',
+    sd: 'San Diego',
+    ph: 'Phoenix',
+    slc: 'Salt Lake City',
+    dn: 'Denver'
+}
+
 class TestForm extends React.Component {
     constructor(props) {
         super(props);
@@ -8,13 +16,6 @@ class TestForm extends React.Component {
             name: '',
             comment: '',
             town: '',
-            townsList: {
-                la: 'Los Angeles',
-                sd: 'San Diego',
-                ph: 'Phoenix',
-                slc: 'Salt Lake City',
-                dn: 'Denver',
-            },
         }
     }
 
@@ -26,7 +27,7 @@ class TestForm extends React.Component {
             alert(`
                 name: ${this.state.name}
                 comment: ${this.state.comment}
-                town: ${this.state.townsList[town]}
+                town: ${townsList[town]}
             `);
         } else {
             console.log('fuuu');
@@ -74,14 +75,14 @@ class TestForm extends React.Component {
                             name="town"
                             onChange={this.handleSimpleChange}
                         >
-                            {this.optionList(this.state.townsList)}
+                            {this.optionList(townsList)}
                         </select>
                     </label>
                 </div>
                 <input type="submit" value={"Send"} />
             </form>
-        );
+        )
     }
 }
 
-export default TestForm;
+export default TestForm
