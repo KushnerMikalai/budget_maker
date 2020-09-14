@@ -1,0 +1,36 @@
+.filterable-table {
+    margin: 0 auto;
+    max-width: 60rem;
+    box-shadow: 0 0 1rem 1rem var(--gray-2);
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--dracula-orchid);
+    border-radius: .5rem;
+    td {
+        padding: .4rem 1rem;
+        border: 1px solid var(--dracula-orchid);
+    }
+    .category-row {
+        background-color: var(--gray-5);
+        font-weight: 600;
+    }
+    .product-row {
+        &_no-stocked {
+            background-color: var(--pink-glamour);
+            color: #fff;
+        }
+    }
+}
+
+.search-bar {
+    margin-bottom: 1rem;
+    &__item {
+        width: 100%;
+        margin-bottom: .4rem;
+    }
+}

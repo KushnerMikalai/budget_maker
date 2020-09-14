@@ -4,31 +4,27 @@
     align-items: center;
     background-color: var(--white);
 }
-
 .header__right-content {
     margin-left: auto;
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-weight: 300;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
     color: var(--dracula-orchid);
     text-decoration: none;
+    transition: all .2s ease-in-out;
+    font-size: 0;
 }
-
-.logo__img {
-    margin-right: .5rem;
-    display: inline-block;
-    width: 2.4rem;
+.logo__icon {
+    font-size: 3rem;
 }
-
-.logo__text {
-    font-size: 1.6rem;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    /* font-family: Impact, Charcoal, sans-serif; */
-    font-weight: 300;
-    color: var(--dracula-orchid);
+.logo:hover {
+    opacity: 0.8;
+}
+.logo:active {
+    transform: scale(1.2);
 }
 
 .menu {
