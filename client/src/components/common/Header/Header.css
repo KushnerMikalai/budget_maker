@@ -17,14 +17,16 @@
     transition: all .2s ease-in-out;
     font-size: 0;
 }
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*    .logo {*/
+/*        animation: App-logo-float infinite 3s ease-in-out;*/
+/*    }*/
+/*}*/
 .logo__icon {
     font-size: 3rem;
 }
 .logo:hover {
     opacity: 0.8;
-}
-.logo:active {
-    transform: scale(1.2);
 }
 
 .menu {

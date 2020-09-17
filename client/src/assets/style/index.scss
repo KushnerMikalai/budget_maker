@@ -1,5 +1,7 @@
+@import './values/colors.css';
+@import './values/fonts.css';
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +13,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.content-img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+.content-img_60 {
+    max-width: 60%;
+}
+

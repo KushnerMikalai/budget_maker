@@ -1,13 +1,14 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import './App.css'
 
-// import Clock from './components/Clock';
+import Main from './views/landing/main'
+
 import ScrollToTop from './components/common/ScrollToTop/ScrollToTop'
 import Header from './components/common/Header/Header'
+import FilterableProductTable from './components/test/ThinkingInReact/FilterableProductTable'
+// import Clock from './components/Clock';
 // import TestForm from './components/forms/TestForm/TestForm';
 // import Calculator from './components/test/Calculator/Calculator'
-import FilterableProductTable from './components/test/ThinkingInReact/FilterableProductTable'
 
 const menu = [
     { href: '/', name: 'home', target: null, route: true },
@@ -23,13 +24,12 @@ function App() {
             {/* <Calculator /> */}
             {/* <TestForm /> */}
             {/* <Clock /> */}
-            {/* <div className="row">pok</div> */}
             <Switch>
                 <Route path="/table">
                     <FilterableProductTable />
                 </Route>
                 <Route path="/">
-                    main
+                    <Main />
                 </Route>
             </Switch>
             <ScrollToTop />
