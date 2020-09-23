@@ -6,17 +6,21 @@ import {
     increment,
     incrementByAmount,
     incrementAsync,
-    selectCount
+    selectCount,
+    selectCounter,
+    setKilunchickAction,
 } from './counterSlice'
 
 export default function Counter() {
     const count = useSelector(selectCount)
+    const counter = useSelector(selectCounter)
     const dispatch = useDispatch()
     const [incrementAmount, setIncrementAmount] = useState('2')
 
     return (
         <div>
-            <div className={`${styles.row} ok`}>
+            {counter}
+            <div className={styles.row}>
                 <button
                     className={styles.button}
                     aria-label="Increment value"
@@ -53,6 +57,12 @@ export default function Counter() {
                     onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
                 >
                     Add Async
+                </button>
+                <button
+                    className={styles.button}
+                    onClick={() => dispatch(setKilunchickAction('uasia'))}
+                >
+                    Set kilunchick
                 </button>
             </div>
         </div>

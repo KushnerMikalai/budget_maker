@@ -1,0 +1,27 @@
+.postList {
+    max-width: 28rem;
+}
+
+.post {
+    border: 1px solid var(--gray-5);
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.post__title {
+    margin: 0 0 .5rem;
+    font-size: 1.3rem;
+}
+.post__footer {
+    display: block;
+}
+.post__info {
+    margin-bottom: 1rem;
+}
+.post__link {
+    color: var(--electron-blue);
+    text-decoration: underline;
+}
+.post__link:hover {
+    text-decoration: none;
+}

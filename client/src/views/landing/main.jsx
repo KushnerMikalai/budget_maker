@@ -1,10 +1,11 @@
 import React from 'react'
-import Counter from '../../components/test/Counter/Counter'
+// import Counter from '../../components/test/Counter/Counter'
 
 function Main() {
     return (
         <div className="container">
-            <Counter />
+            <h1>Main</h1>
+            {/*<Counter />*/}
         </div>
     )
 }

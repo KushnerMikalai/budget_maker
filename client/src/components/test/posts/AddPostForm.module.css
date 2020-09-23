@@ -1,0 +1,7 @@
+.sectionForm {
+    overflow: visible;
+}
+.form {
+    position: sticky;
+    top: 1rem;
+}

@@ -1,0 +1,7 @@
+.posts {
+    display: flex;
+    justify-content: space-between;
+    max-width: 54rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
