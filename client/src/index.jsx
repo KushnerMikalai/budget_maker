@@ -4,17 +4,20 @@ import 'normalize.css'
 import './assets/style/index.scss'
 import App from './App'
 import store from './store/store'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
-import {BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { fetchUsers } from './store/slices/usersSlice'
 
 import './api/server'
+
+store.dispatch(fetchUsers())
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <Router>
-                <App/>
+                <App />
             </Router>
         </Provider>
     </React.StrictMode>,
