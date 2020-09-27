@@ -7,7 +7,7 @@ import store from './store/store'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { fetchUsers } from './store/slices/usersSlice'
+import { fetchUsers } from './components/test/users/usersSlice'
 
 import './api/server'
 

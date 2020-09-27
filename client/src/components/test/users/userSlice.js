@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getCookie } from '../../utils/helpers/cookie'
+import { getCookie } from '../../../utils/helpers/cookie'
 
 export const userSlice = createSlice({
     name: 'user',
