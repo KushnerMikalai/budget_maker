@@ -13,21 +13,22 @@ import Main from './views/landing/main'
 import { Posts } from './views/landing/Posts'
 import { UsersList } from './components/test/users/UsersList'
 import { UserPage } from './components/test/users/UserPage'
+import { NotificationsList } from './components/test/notifications/NotificationsList'
 
 import ScrollToTop from './components/common/ScrollToTop/ScrollToTop'
 import Header from './components/common/Header/Header'
 import FilterableProductTable from './components/test/ThinkingInReact/FilterableProductTable'
 
-import {SinglePostPage} from './components/test/posts/SinglePostPage'
-import {EditPostForm} from './components/test/posts/EditPostForm'
+import { SinglePostPage } from './components/test/posts/SinglePostPage'
+import { EditPostForm } from './components/test/posts/EditPostForm'
 
 const menu = [
-    {href: '/', name: 'home', target: null, route: true},
-    {href: '/posts', name: 'posts', target: null, route: true},
-    {href: '/users', name: 'users', target: null, route: true},
-    {href: '/table', name: 'table', target: null, route: true},
-    {href: 'google.com', name: 'google', target: '_blunk'},
-    {href: 'https://github.com/KushnerMikalai', name: 'github', target: '_blunk'},
+    { href: '/', name: 'home', target: null, route: true },
+    { href: '/posts', name: 'posts', target: null, route: true },
+    { href: '/users', name: 'users', target: null, route: true },
+    { href: '/table', name: 'table', target: null, route: true },
+    { href: 'google.com', name: 'google', target: '_blunk' },
+    { href: 'https://github.com/KushnerMikalai', name: 'github', target: '_blunk' },
 ]
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
 
     return (
         <div className="App">
-            <Header items={menu}/>
+            <Header items={menu} />
             {/* <Calculator /> */}
             {/* <TestForm /> */}
             {/* <Clock /> */}
@@ -56,21 +57,22 @@ function App() {
             {user.token}
             <Switch>
                 <Route path="/table">
-                    <FilterableProductTable/>
+                    <FilterableProductTable />
                 </Route>
+                <Route exact path="/notifications" component={NotificationsList} />
                 <Route exact path="/users" component={UsersList} />
                 <Route exact path="/users/:userId" component={UserPage} />
-                <Route exact path="/posts/:postId" component={SinglePostPage}/>
-                <Route exact path="/posts/edit_post/:postId" component={EditPostForm}/>
+                <Route exact path="/posts/:postId" component={SinglePostPage} />
+                <Route exact path="/posts/edit_post/:postId" component={EditPostForm} />
                 <Route path="/posts">
                     <Posts />
                 </Route>
                 <Route path="/">
-                    <Main/>
+                    <Main />
                 </Route>
-                <Redirect to="/"/>
+                <Redirect to="/" />
             </Switch>
-            <ScrollToTop/>
+            <ScrollToTop />
         </div>
     )
 }

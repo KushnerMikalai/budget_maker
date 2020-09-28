@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import './Header.css'
 
 import LoginDialog from '../LoginDialog/LoginDialog'
+import {
+    fetchNotifications,
+    selectAllNotifications
+} from '../../test/notifications/notificationsSlice'
 
-class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showLoginDialog: false,
-            nameApp: 'BUDGET MAKER',
-            shortNameApp: 'BUDGET'
-        }
+export default function Header(props) {
+    const dispatch = useDispatch()
+    const notifications = useSelector(selectAllNotifications)
+    const numUnreadNotifications = notifications.filter(n => !n.read).length
+    // omit component contents
+    let unreadNotificationsBadge
+
+    if (numUnreadNotifications > 0) {
+        unreadNotificationsBadge = (
+            <span className="badge">{numUnreadNotifications}</span>
+        )
     }
-    menuItems = this.props.items.map((item) => (
+
+    const fetchNewNotifications = () => {
+        dispatch(fetchNotifications())
+    }
+    const [showLoginDialog, setShowLoginDialog] = useState(false)
+
+    const menuItems = props.items.map((item) => (
         <li className="menu__item" key={item.name}>
             {item.route ?
                 <Link
@@ -31,47 +45,48 @@ class Header extends React.Component {
                     {item.name}
                 </a>
             }
-
         </li>
     ))
-    handleToggleLoginDialog = () => {
-        this.setState({
-            showLoginDialog: !this.state.showLoginDialog
-        })
-    }
-    render() {
-        const {
-            shortNameApp,
-            showLoginDialog,
-        } = this.state;
-        return (
-            <header className={"header"}>
-                <a
-                    className="logo"
-                    href="/"
-                    aria-label={`${shortNameApp}. Go to main page`}
-                >
-                    <i className="logo__icon material-icons notranslate" translate="no">layers</i>
-                </a>
-                <div className={"header__right-content"}>
-                    <nav>
-                        <ul className={"menu"}>{this.menuItems}</ul>
-                    </nav>
-                </div>
-                <button
-                    className="login-button header-item"
-                    onClick={this.handleToggleLoginDialog}
-                >
-                    login
-                </button>
-                {showLoginDialog &&
-                    <LoginDialog
-                        handleClose={this.handleToggleLoginDialog}
-                    />
-                }
-            </header>
-        )
-    }
-}
 
-export default Header;
+    const handleToggleLoginDialog = () => {
+        setShowLoginDialog(!showLoginDialog)
+    }
+
+    return (
+        <header className={"header"}>
+            <a
+                className="logo"
+                href="/"
+                aria-label={'BUDGET MAKER. Go to main page'}
+            >
+                <i className="logo__icon material-icons notranslate" translate="no">layers</i>
+            </a>
+            <div className={"header__right-content"}>
+                <nav>
+                    <ul className={"menu"}>
+                        {menuItems}
+                        <li className="menu__item">
+                            <Link className="menu__link header-item" to="/notifications">
+                                Notifications {unreadNotificationsBadge}
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button
+                className="login-button header-item"
+                onClick={handleToggleLoginDialog}
+            >
+                login
+            </button>
+            <button className="login-button header-item" onClick={fetchNewNotifications}>
+                Refresh Notifications
+            </button>
+            {showLoginDialog &&
+                <LoginDialog
+                    handleClose={handleToggleLoginDialog}
+                />
+            }
+        </header>
+    )
+}
