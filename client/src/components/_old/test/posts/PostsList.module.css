@@ -1,7 +1,6 @@
 .postList {
     max-width: 28rem;
 }
-
 .post {
     border: 1px solid var(--gray-5);
     margin-bottom: 1rem;

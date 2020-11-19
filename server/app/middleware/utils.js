@@ -73,6 +73,7 @@ exports.validationResult = (req, res, next) => {
     }
     return next()
   } catch (err) {
+    console.log(err, 'ee')
     return this.handleError(res, this.buildErrObject(422, err.array()))
   }
 }

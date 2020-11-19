@@ -30,6 +30,9 @@
     margin: auto;
     z-index: 2;
 }
+.dialog__content.small {
+    max-width: 24rem;
+}
 .dialog__header {
     margin-bottom: 2rem;
     font-size: 2rem;

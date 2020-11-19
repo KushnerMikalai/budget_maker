@@ -1,17 +1,24 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import rootReducer from './rootReducer';
 
-import counterReducer from '../components/test/Counter/counterSlice'
-import postsReducer from '../components/test/posts/postsSlice'
-import userReducer from '../components/test/users/userSlice'
-import usersReducer from '../components/test/users/usersSlice'
-import notificationsReducer from '../components/test/notifications/notificationsSlice'
+const middleware = getDefaultMiddleware({
+    immutableCheck: false,
+    serializableCheck: false,
+    thunk: true,
+});
 
-export default configureStore({
-    reducer: {
-        counter: counterReducer,
-        posts: postsReducer,
-        user: userReducer,
-        users: usersReducer,
-        notifications: notificationsReducer,
-    }
-})
+const store = configureStore({
+    reducer: rootReducer,
+    middleware,
+    devTools: process.env.NODE_ENV !== 'production',
+});
+
+if (process.env.NODE_ENV === 'development' && module.hot) {
+    module.hot.accept('./rootReducer', () => {
+        // eslint-disable-next-line global-require
+        const newRootReducer = require('./rootReducer').default;
+        store.replaceReducer(newRootReducer);
+    });
+}
+
+export default store;

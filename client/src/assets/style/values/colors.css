@@ -1,5 +1,4 @@
 /*@value default: #0F4C81;*/
-
 /*@value gray-3: #F5F5F5;*/
 /*@value gray-4: #F0F0F0;*/
 /*@value gray-5: #D9D9D9;*/
@@ -21,4 +20,9 @@
     --chi-gong: #d63031;
     --electron-blue: #0984e3;
     --dracula-orchid: #2d3436;
+}
+
+:root ._dark {
+    --primary-text: #E4E6EB;
+    --accent: hsl(214, 89%, 52%);
 }

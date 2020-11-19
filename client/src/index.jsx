@@ -1,23 +1,36 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import 'normalize.css'
-import './assets/style/index.scss'
-import App from './App'
-import store from './store/store'
-import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { fetchUsers } from './components/test/users/usersSlice'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
+import './assets/style/index.css';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import App from './App';
+import store from './store/store';
+import * as serviceWorker from './serviceWorker';
+import {getCookie} from './utils/helpers/cookie';
+import {setTokenClient} from './api/client';
+import {
+    getUserProfile,
+    setLoadingProfile,
+    setLoginStatus,
+} from './store/slices/userSlice'
 
-import './api/server'
+import './utils/lang/i18n';
 
-store.dispatch(fetchUsers())
+const token = getCookie('session_id');
+if (token) {
+    setTokenClient(token);
+    store.dispatch(getUserProfile());
+} else {
+    store.dispatch(setLoginStatus(false))
+    store.dispatch(setLoadingProfile(false))
+}
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <Router>
-                <App />
+                <App/>
             </Router>
         </Provider>
     </React.StrictMode>,

@@ -1,0 +1,39 @@
+.formItem {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: inline-block;
+  min-width: 6rem;
+  margin-right: 0.5rem;
+}
+
+.input {
+  width: 12rem;
+}
+
+.error {
+  font-size: 1rem;
+  color: var(--pink-glamour)
+}
+
+.button {
+  margin-bottom: 1rem;
+}
+
+.link {
+  color: var(--electron-blue);
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.link:active {
+  opacity: .8;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

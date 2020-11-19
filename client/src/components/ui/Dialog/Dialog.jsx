@@ -7,10 +7,12 @@ class Dialog extends React.Component {
         this.state = {}
     }
     titleContent = this.props.title ? <div className="dialog__header">{this.props.title}</div> : null;
+
     closeIcon =
         <svg xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
             <path fill="none" fillRule="evenodd" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" vectorEffect="non-scaling-stroke" d="M2 2l14 14M16 2L2 16"/>
         </svg>
+
     clickEsc = (e) => {
         const evt = e || window.event;
         if (evt.keyCode === 27) {
@@ -34,7 +36,7 @@ class Dialog extends React.Component {
                         className="dialog__background"
                         onClick={this.props.handleClose}
                     />
-                    <div className="dialog__content">
+                    <div className={`dialog__content ${this.props.size}`}>
                         <button
                             className="dialog__close"
                             type="button"

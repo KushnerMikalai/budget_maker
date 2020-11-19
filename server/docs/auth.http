@@ -1,0 +1,44 @@
+### register
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "name": "test1",
+  "email": "test1@mail.com",
+  "password": "123456"
+}
+
+
+### login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "test1@mail.com",
+  "password": "123456"
+}
+
+
+### login code
+POST http://localhost:3000/login_code
+Content-Type: application/json
+
+{
+    "email": "kushner.of.by@yandex.ru"
+}
+
+
+### check login code
+POST http://localhost:3000/verify_login_code
+Content-Type: application/json
+
+{
+    "email": "test4@mail.com",
+    "code": "b6814177-d46e-4451-baa5-fb15ed0c08fd"
+}
+
+
+### token
+GET http://localhost:3000/token
+Content-Type: application/json
+Authorization: Bearer 4f6ff813b44655f1b16071a4ea850bc66f422e1271af1e6125c5044e4621a0f402ac8c8f807be1c002d49a38b6d14261a16ac9bf9b29c05d8f790b1cacc6093f5612e27684082db1c32dc1585a5eaa31df36af81d342e71c374c47944fcd4657984f445a7827663328db77983f8df15714c6154fd23a7797824edad7ce667317ae1a52bcacce002bb3d37892d2e723954e961a58d8bf1b8236d5ef4db24d92e1470af46729b4e72ca48b57332316f02605052fb77b732f1e42e63eb8460acdeb

@@ -1,0 +1,9 @@
+{
+    "welcome": "Hello World!",
+    "titles": {
+        "dashboard": "Dashboard"
+    },
+    "errors": {
+        "EMAIL_ALREADY_EXISTS": "Email already exists"
+    }
+}

@@ -4,8 +4,8 @@ const UserAccess = require('../models/userAccess')
 const ForgotPassword = require('../models/forgotPassword')
 const utils = require('../middleware/utils')
 const uuid = require('uuid')
-const {addHours} = require('date-fns')
-const {matchedData} = require('express-validator')
+const { addHours } = require('date-fns')
+const { matchedData } = require('express-validator')
 const auth = require('../middleware/auth')
 const emailer = require('../middleware/emailer')
 const HOURS_TO_BLOCK = 2
@@ -20,10 +20,7 @@ const LOGIN_ATTEMPTS = 5
  * @param {Object} user - user object
  */
 const generateToken = (user) => {
-    // Gets expiration time
-    const expiration =
-        Math.floor(Date.now() / 1000) +
-        60 * process.env.JWT_EXPIRATION_IN_MINUTES
+    const expiration = Math.floor(Date.now() / 1000) + 60 * process.env.JWT_EXPIRATION_IN_MINUTES
 
     // returns signed and encrypted token
     return auth.encrypt(
