@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
-import apiServices from '../../api/services';
-import { setTokenClient } from '../../api/client';
+import { createSlice } from '@reduxjs/toolkit'
+import apiServices from '../../api/services'
+import { setTokenClient } from '../../api/client'
 
 export const userSlice = createSlice({
     name: 'user',
@@ -26,17 +26,17 @@ export const userSlice = createSlice({
             state.login = payload
         }
     },
-});
+})
 
 export const getUserProfile = () => async (dispatch) => {
-    const res = await apiServices.profile.get();
-    console.log(res, 'getUserProfile');
+    const res = await apiServices.profile.get()
+    console.log(res, 'getUserProfile')
     if (res.errors) {
-        dispatch(setProfile(null));
+        dispatch(setProfile(null))
     } else {
-        dispatch(setProfile(res));
+        dispatch(setProfile(res))
     }
-    return res;
+    return res
 };
 
 export const userSignUp = (data) => async (dispatch) => {
@@ -78,8 +78,8 @@ export const {
 } = userSlice.actions;
 
 export const selectLogin = state => state.user.login
-export const selectUser = (state) => state.user
+export const selectUser = state => state.user
 export const selectProfile = state => state.profile
-export const selectAuthError = (state) => state.user.errorsAuth
-export const selectLoadingProfile = (state) => state.user.loadingProfile
+export const selectAuthError = state => state.user.errorsAuth
+export const selectLoadingProfile = state => state.user.loadingProfile
 export default userSlice.reducer

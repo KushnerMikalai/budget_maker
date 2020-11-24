@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import './Header.css';
+import './Header.css'
 
 const menu = [
     { href: '/', name: 'home', target: null, route: true },
@@ -9,7 +9,7 @@ const menu = [
     { href: '/signup', name: 'signup', target: null, route: true },
     // { href: 'google.com', name: 'google', target: '_blunk' },
     // { href: 'https://github.com/KushnerMikalai', name: 'github', target: '_blunk' },
-];
+]
 
 // const appMenu = [
 //     { href: '/dashboard', name: 'dashboard', target: null, route: true },
@@ -35,7 +35,7 @@ export default function Header() {
                 </a>
             )}
         </li>
-    ));
+    ))
 
     return (
         <header className={'header'}>
@@ -54,5 +54,5 @@ export default function Header() {
                 </nav>
             </div>
         </header>
-    );
+    )
 }

@@ -1,0 +1,1 @@
+GET http://localhost:3000/lang/get?keys=registration,common&lang=ru

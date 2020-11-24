@@ -1,4 +1,8 @@
 {
+    "common": {
+        "login": "Log in",
+        "sign_up": "Sign up"
+    },
     "registration": {
         "SUBJECT": "Verify your email at myProject",
         "MESSAGE": "<p>Hello %s.</p> <p>Welcome! To verify your email, please click in this link:</p> <p>%s/verify/%s</p> <p>Thank you.</p>"

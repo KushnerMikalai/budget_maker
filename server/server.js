@@ -51,10 +51,12 @@ app.use(
 
 // i18n
 i18n.configure({
-  locales: ['en', 'es'],
-  directory: `${__dirname}/locales`,
-  defaultLocale: 'en',
-  objectNotation: true
+    locales: ['en', 'ru'],
+    directory: `${__dirname}/locales`,
+    defaultLocale: 'en',
+    objectNotation: true,
+    retryInDefaultLocale: true,
+    updateFiles: false
 })
 app.use(i18n.init)
 

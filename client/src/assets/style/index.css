@@ -6,37 +6,13 @@ body {
         'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(43, 43, 43);
-    color: var(--primary-text)
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.container {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.content-img {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.content-img_60 {
-    max-width: 60%;
-}
-
-.loading-page {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 4;
-    background-color: #fff;
-    text-align: center;
-    vertical-align: middle;
+._dark {
+    color: var(--primary-text);
+    background-color: var(--background);
 }
