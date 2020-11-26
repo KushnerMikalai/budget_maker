@@ -34,7 +34,6 @@ module.exports = {
      */
 
     encrypt(text) {
-        console.log(text, 'sss')
         const cipher = crypto.createCipheriv(algorithm, key, iv)
 
         let encrypted = cipher.update(text, 'utf8', 'hex')
